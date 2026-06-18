@@ -34,7 +34,7 @@
             --color-primary-text: #3D271D;
             --color-secondary-text: #7C6053;
             --color-accent: #FF5E86;
-            --color-accent-light: #D4AF37;
+            --color-accent-light: #A87C00;
             --color-border: #F3ECE3;
             --color-hover: #FFF5E6;
             --color-footer-bg: #2A1A12;
@@ -42,16 +42,16 @@
             --color-card-bg: #FFFFFF;
         }
         html[data-theme='dark'] {
-            --color-background: #130C08;
-            --color-primary-text: #FDFBF7;
-            --color-secondary-text: #BCAAA4;
-            --color-accent: #FF7597;
-            --color-accent-light: #F3C052;
-            --color-border: #2E221C;
-            --color-hover: #231711;
-            --color-footer-bg: #0B0705;
-            --color-footer-text: #EAE3DF; 
-            --color-card-bg: #1A110B;
+            --color-background: #0E0F12; /* Premium dark charcoal grey */
+            --color-primary-text: #F3F4F6; /* Soft light grey / white */
+            --color-secondary-text: #9CA3AF; /* Muted light grey */
+            --color-accent: #FF5E86; /* Strawberry Rose Pink (Primary Brand Color) */
+            --color-accent-light: #D4AF37; /* Honey Pastry Gold (Secondary Brand Color) */
+            --color-border: #23272E; /* Clean dark grey border */
+            --color-hover: #1A1C20; /* Alternate dark grey for sections */
+            --color-footer-bg: #07080A; /* Pitch dark footer */
+            --color-footer-text: #E5E7EB; 
+            --color-card-bg: #16171A; /* Clean dark card background */
         }
         
         body {
@@ -71,9 +71,34 @@
         .border-border { border-color: var(--color-border); }
         .bg-card-custom { background-color: var(--color-card-bg); }
 
+        /* ── Typography Size & Weight System ── */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
-            font-weight: 600 !important;
+            font-weight: 550 !important;
+        }
+        h1 {
+            font-size: 2.25rem !important; /* 36px */
+        }
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 3.75rem !important; /* 60px */
+            }
+        }
+        h2 {
+            font-size: 1.875rem !important; /* 30px */
+        }
+        @media (min-width: 640px) {
+            h2 {
+                font-size: 2.25rem !important; /* 36px */
+            }
+        }
+        h3 {
+            font-size: 1.25rem !important; /* 20px */
+        }
+        @media (min-width: 640px) {
+            h3 {
+                font-size: 1.5rem !important; /* 24px */
+            }
         }
         p, .text-secondary-text {
             font-weight: 400 !important;
@@ -233,7 +258,7 @@
                         <path stroke-linecap="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
-                <div class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-border">
+                <div class="flex items-center gap-2 ps-2 sm:ps-3 border-s border-border">
                     <div class="w-9 h-9 rounded-full bg-accent-light/20 flex items-center justify-center text-accent-light font-bold">CP</div>
                     <div class="hidden sm:block">
                         <p class="text-sm font-medium">Chef Penelope</p>
@@ -249,7 +274,7 @@
     <div class="flex min-h-screen pt-[73px]">
         <!-- ADMIN SIDEBAR -->
         <aside id="sidebar"
-            class="fixed top-0 xl:top-[73px] left-0 w-72 xl:w-64 h-full xl:h-[calc(100vh-73px)] z-[60] transform -translate-x-full xl:translate-x-0 transition-transform duration-300 bg-background border-r border-border overflow-y-auto shrink-0">
+            class="fixed top-0 xl:top-[73px] start-0 w-72 xl:w-64 h-full xl:h-[calc(100vh-73px)] z-[60] transform -translate-x-full rtl:translate-x-full xl:translate-x-0 transition-transform duration-300 bg-background border-e border-border overflow-y-auto shrink-0">
             <div class="p-5">
                 <div class="flex xl:hidden justify-between items-center mb-6">
                     <span class="font-bold text-accent font-serif">Admin Menu</span>
@@ -288,7 +313,7 @@
                     <a href="#" data-section="admin-chat" class="sidebar-link">
                         <i class="fa-solid fa-inbox w-5"></i>
                         <span>Chef Inbox</span>
-                        <span id="admin-chat-badge" class="hidden ml-auto w-2.5 h-2.5 bg-accent rounded-full"></span>
+                        <span id="admin-chat-badge" class="hidden ms-auto w-2.5 h-2.5 bg-accent rounded-full"></span>
                     </a>
                     
                     <p class="text-xs uppercase tracking-wider text-secondary-text px-3 mt-4 mb-2">Navigation</p>
@@ -311,7 +336,7 @@
         </aside>
 
         <!-- MAIN PANEL -->
-        <main class="flex-grow min-w-0 space-y-6 xl:ml-64 px-4 sm:px-6 lg:px-8 py-6">
+        <main class="flex-grow min-w-0 space-y-6 xl:ms-64 px-4 sm:px-6 lg:px-8 py-6">
             
             <!-- SECTION 1: Admin Overview -->
             <section id="admin-overview" class="admin-section">
@@ -325,7 +350,7 @@
                     <div class="bg-card-custom border border-border p-6 rounded-2xl shadow-sm">
                         <p class="text-xs uppercase tracking-wider text-secondary-text font-bold">Active Custom Orders</p>
                         <h3 class="text-3xl font-black text-accent mt-2 font-serif" id="stat-active-orders">1 Order</h3>
-                        <span class="text-[10px] text-emerald-600 font-semibold"><i class="fas fa-caret-up mr-1"></i> Synchronized Live</span>
+                        <span class="text-[10px] text-emerald-600 font-semibold"><i class="fas fa-caret-up me-1"></i> Synchronized Live</span>
                     </div>
                     <div class="bg-card-custom border border-border p-6 rounded-2xl shadow-sm">
                         <p class="text-xs uppercase tracking-wider text-secondary-text font-bold">Today's Setup Deliveries</p>
@@ -340,7 +365,7 @@
                     <div class="bg-card-custom border border-border p-6 rounded-2xl shadow-sm">
                         <p class="text-xs uppercase tracking-wider text-secondary-text font-bold">Catering Revenue (Monthly)</p>
                         <h3 class="text-3xl font-black text-emerald-600 mt-2 font-serif">$2,950.00</h3>
-                        <span class="text-[10px] text-emerald-600 font-semibold"><i class="fas fa-arrow-trend-up mr-1"></i> +12% vs last month</span>
+                        <span class="text-[10px] text-emerald-600 font-semibold"><i class="fas fa-arrow-trend-up me-1"></i> +12% vs last month</span>
                     </div>
                 </div>
 
@@ -379,7 +404,7 @@
                     <p class="text-sm text-secondary-text mb-6">Track client catering details. Update baking/delivery status and write chef notes to guide the client on their dashboard.</p>
 
                     <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse text-xs">
+                        <table class="w-full text-start border-collapse text-xs">
                             <thead>
                                 <tr class="bg-hover text-secondary-text uppercase font-bold border-b border-border">
                                     <th class="p-4">Order ID</th>
@@ -387,7 +412,7 @@
                                     <th class="p-4">Catering Package</th>
                                     <th class="p-4">Delivery Date</th>
                                     <th class="p-4 text-center">Status</th>
-                                    <th class="p-4 text-right">Action</th>
+                                    <th class="p-4 text-end">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-border" id="admin-orders-table-body">
@@ -488,7 +513,7 @@
 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div class="lg:col-span-2 space-y-6">
-                            <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2"><i class="fas fa-clipboard-list text-accent mr-1"></i> Event Schedule Detail</h4>
+                            <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2"><i class="fas fa-clipboard-list text-accent me-1"></i> Event Schedule Detail</h4>
                             
                             <div class="grid grid-cols-2 gap-4 text-xs">
                                 <div class="p-4 bg-hover border border-border rounded-xl">
@@ -514,7 +539,7 @@
 
                         <!-- Logistics Assignment -->
                         <div class="p-6 bg-hover border border-border rounded-2xl space-y-4">
-                            <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2"><i class="fas fa-user-tag text-accent-light mr-1"></i> Logistics Assignment</h4>
+                            <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2"><i class="fas fa-user-tag text-accent-light me-1"></i> Logistics Assignment</h4>
                             
                             <div>
                                 <label class="block text-xs font-semibold text-secondary-text mb-1">Select Delivery Courier</label>
@@ -604,11 +629,11 @@
                                     <p class="text-xs text-secondary-text">Catering Client (#58102)</p>
                                 </div>
                             </div>
-                            <span class="text-[10px] text-emerald-500 font-bold"><i class="fas fa-circle mr-1 animate-pulse"></i> Client is Online</span>
+                            <span class="text-[10px] text-emerald-500 font-bold"><i class="fas fa-circle me-1 animate-pulse"></i> Client is Online</span>
                         </div>
                         
                         <!-- Messages Container -->
-                        <div class="space-y-4 h-[280px] overflow-y-auto pr-1 text-xs" id="admin-chat-messages">
+                        <div class="space-y-4 h-[280px] overflow-y-auto pe-1 text-xs" id="admin-chat-messages">
                             <!-- Dynamic messages -->
                         </div>
                     </div>
@@ -748,7 +773,14 @@
             const closeSidebar = document.getElementById('close-sidebar');
 
             const toggleMobile = (open) => {
-                sidebar.classList.toggle('-translate-x-full', !open);
+                const isRtl = html.getAttribute('dir') === 'rtl';
+                if (isRtl) {
+                    sidebar.classList.toggle('translate-x-full', !open);
+                    sidebar.classList.remove('-translate-x-full');
+                } else {
+                    sidebar.classList.toggle('-translate-x-full', !open);
+                    sidebar.classList.remove('translate-x-full');
+                }
                 overlay.classList.toggle('active', open);
                 document.body.style.overflow = open ? 'hidden' : '';
             };
@@ -919,7 +951,7 @@
                         </td>
                         <td class="p-4">${ord.deliveryDate}</td>
                         <td class="p-4 text-center">${badge}</td>
-                        <td class="p-4 text-right">
+                        <td class="p-4 text-end">
                             <button onclick="showStatusController('${ord.id}')" class="px-3.5 py-1.5 bg-accent text-white font-bold rounded-lg shadow-sm hover:opacity-90">Manage Status</button>
                         </td>
                     </tr>
@@ -984,10 +1016,10 @@
                         badge = '<span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Awaiting Review</span>';
                         noteBorderClass = 'border-amber-200 bg-amber-50/20';
                     } else if (p.status === 'Approved') {
-                        badge = '<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase"><i class="fas fa-check-circle mr-1"></i> Approved</span>';
+                        badge = '<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase"><i class="fas fa-check-circle me-1"></i> Approved</span>';
                         noteBorderClass = 'border-emerald-200 bg-emerald-50/20';
                     } else {
-                        badge = '<span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase"><i class="fas fa-exclamation-triangle mr-1"></i> Revision Requested</span>';
+                        badge = '<span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase"><i class="fas fa-exclamation-triangle me-1"></i> Revision Requested</span>';
                         noteBorderClass = 'border-red-200 bg-red-50/20';
                     }
 
@@ -995,8 +1027,8 @@
                         <div class="p-4 border rounded-2xl flex flex-col sm:flex-row gap-4 hover:shadow-sm transition ${noteBorderClass}">
                             <img src="${imgSrc}" class="w-24 h-24 object-cover rounded-xl border border-border shrink-0" alt="Proof Sketch" />
                             <div class="flex-grow space-y-1 relative">
-                                <button onclick="deleteDesignProof(${p.id})" class="absolute top-0 right-0 text-red-500 hover:text-red-700"><i class="fas fa-trash text-xs"></i></button>
-                                <div class="flex justify-between items-center pr-6 flex-wrap gap-2">
+                                <button onclick="deleteDesignProof(${p.id})" class="absolute top-0 end-0 text-red-500 hover:text-red-700"><i class="fas fa-trash text-xs"></i></button>
+                                <div class="flex justify-between items-center pe-6 flex-wrap gap-2">
                                     <h5 class="font-bold text-xs text-primary-text font-serif">${p.title}</h5>
                                     ${badge}
                                 </div>
@@ -1109,7 +1141,7 @@
 
                 container.innerHTML = messages.map(msg => {
                     const isChef = msg.sender === 'chef';
-                    const bgClass = isChef ? 'bg-accent/10 ml-auto text-right' : 'bg-hover mr-auto text-left';
+                    const bgClass = isChef ? 'bg-accent/10 ms-auto text-end' : 'bg-hover me-auto text-start';
                     const senderLabel = isChef ? 'You' : 'Sarah Jenkins';
                     return `
                         <div class="p-3 rounded-xl max-w-[85%] ${bgClass}">
@@ -1177,7 +1209,7 @@
                                 </div>
                                 <label class="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" value="${item.id}" ${checked} onclick="toggleMenuFlavor('${cat.key}', '${item.id}')" class="sr-only peer">
-                                    <div class="w-8 h-4 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-accent"></div>
+                                    <div class="w-8 h-4 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-accent"></div>
                                 </label>
                             </div>
                         `;
@@ -1185,7 +1217,7 @@
 
                     return `
                         <div class="space-y-2">
-                            <h5 class="font-bold text-xs uppercase tracking-wider text-secondary-text mb-1"><i class="fas fa-chevron-right text-accent mr-1"></i> ${cat.title}</h5>
+                            <h5 class="font-bold text-xs uppercase tracking-wider text-secondary-text mb-1"><i class="fas fa-chevron-right text-accent me-1"></i> ${cat.title}</h5>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pb-4">
                                 ${itemsHtml}
                             </div>

@@ -34,7 +34,7 @@
             --color-primary-text: #3D271D; /* Rich dark chocolate cocoa */
             --color-secondary-text: #7C6053; /* Warm taupe / milk chocolate */
             --color-accent: #FF5E86; /* Strawberry Rose Pink (Primary) */
-            --color-accent-light: #D4AF37; /* Honey Pastry Gold (Secondary) */
+            --color-accent-light: #A87C00; /* Honey Pastry Gold (Secondary) */
             --color-border: #F3ECE3; /* Soft crust beige */
             --color-hover: #FFF5E6; /* Warm vanilla cream hover */
             --color-footer-bg: #2A1A12; /* Deep cocoa brown footer */
@@ -42,16 +42,16 @@
             --color-card-bg: #FFFFFF;
         }
         html[data-theme='dark'] {
-            --color-background: #130C08; /* Deep dark warm chocolate */
-            --color-primary-text: #FDFBF7; /* Soft vanilla cream */
-            --color-secondary-text: #BCAAA4; /* Muted warm taupe */
-            --color-accent: #FF7597; /* Berry Pink (Primary) */
-            --color-accent-light: #F3C052; /* Warm bright gold (Secondary) */
-            --color-border: #2E221C; /* Dark chocolate border */
-            --color-hover: #231711; /* Dark chocolate hover */
-            --color-footer-bg: #0B0705; /* Pitch dark cocoa footer */
-            --color-footer-text: #EAE3DF; 
-            --color-card-bg: #1A110B;
+            --color-background: #0E0F12; /* Premium dark charcoal grey */
+            --color-primary-text: #F3F4F6; /* Soft light grey / white */
+            --color-secondary-text: #9CA3AF; /* Muted light grey */
+            --color-accent: #FF5E86; /* Strawberry Rose Pink (Primary Brand Color) */
+            --color-accent-light: #D4AF37; /* Honey Pastry Gold (Secondary Brand Color) */
+            --color-border: #23272E; /* Clean dark grey border */
+            --color-hover: #1A1C20; /* Alternate dark grey for sections */
+            --color-footer-bg: #07080A; /* Pitch dark footer */
+            --color-footer-text: #E5E7EB; 
+            --color-card-bg: #16171A; /* Clean dark card background */
         }
         
         body {
@@ -71,10 +71,34 @@
         .border-border { border-color: var(--color-border); }
         .bg-card-custom { background-color: var(--color-card-bg); }
 
-        /* ── Typography Weight System ── */
+        /* ── Typography Size & Weight System ── */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
-            font-weight: 600 !important;
+            font-weight: 550 !important;
+        }
+        h1 {
+            font-size: 2.25rem !important; /* 36px */
+        }
+        @media (min-width: 640px) {
+            h1 {
+                font-size: 3.75rem !important; /* 60px */
+            }
+        }
+        h2 {
+            font-size: 1.875rem !important; /* 30px */
+        }
+        @media (min-width: 640px) {
+            h2 {
+                font-size: 2.25rem !important; /* 36px */
+            }
+        }
+        h3 {
+            font-size: 1.25rem !important; /* 20px */
+        }
+        @media (min-width: 640px) {
+            h3 {
+                font-size: 1.5rem !important; /* 24px */
+            }
         }
         p, .text-secondary-text {
             font-weight: 400 !important;
@@ -340,7 +364,7 @@
                         <path stroke-linecap="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
                 </button>
-                <div class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-border">
+                <div class="flex items-center gap-2 ps-2 sm:ps-3 border-s border-border">
                     <div class="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">SJ</div>
                     <div class="hidden sm:block">
                         <p class="text-sm font-medium" id="header-user-name">Sarah Jenkins</p>
@@ -356,7 +380,7 @@
     <div class="flex min-h-screen pt-[73px]">
         <!-- USER SIDEBAR -->
         <aside id="sidebar"
-            class="fixed top-0 xl:top-[73px] left-0 w-72 xl:w-64 h-full xl:h-[calc(100vh-73px)] z-[60] transform -translate-x-full xl:translate-x-0 transition-transform duration-300 bg-background border-r border-border overflow-y-auto shrink-0">
+            class="fixed top-0 xl:top-[73px] start-0 w-72 xl:w-64 h-full xl:h-[calc(100vh-73px)] z-[60] transform -translate-x-full rtl:translate-x-full xl:translate-x-0 transition-transform duration-300 bg-background border-e border-border overflow-y-auto shrink-0">
             <div class="p-5">
                 <div class="flex xl:hidden justify-between items-center mb-6">
                     <span class="font-bold text-accent font-serif">User Menu</span>
@@ -367,7 +391,7 @@
                     </button>
                 </div>
                 <nav class="flex flex-col gap-1">
-                    <p class="text-xs uppercase tracking-wider text-secondary-text px-3 mb-2">My Profile</p>
+                    <p class="text-xs uppercase tracking-wider text-secondary-text px-3 mb-2">Operations</p>
                     <a href="#" data-section="user-overview" class="sidebar-link active">
                         <i class="fa-solid fa-house-user w-5"></i>
                         <span>Overview</span>
@@ -383,7 +407,7 @@
                     <a href="#" data-section="user-proofs" class="sidebar-link relative">
                         <i class="fa-solid fa-file-signature w-5"></i>
                         <span>Design Proofs</span>
-                        <span id="proofs-badge" class="hidden absolute right-3 w-2.5 h-2.5 bg-accent rounded-full"></span>
+                        <span id="proofs-badge" class="hidden absolute end-3 w-2.5 h-2.5 bg-accent rounded-full"></span>
                     </a>
                     <a href="#" data-section="user-logistics" class="sidebar-link">
                         <i class="fa-solid fa-calendar-days w-5"></i>
@@ -396,7 +420,7 @@
                     <a href="#" data-section="user-chat" class="sidebar-link relative">
                         <i class="fa-solid fa-comments w-5"></i>
                         <span>Chef Messages</span>
-                        <span id="chat-badge" class="hidden absolute right-3 w-2.5 h-2.5 bg-accent rounded-full"></span>
+                        <span id="chat-badge" class="hidden absolute end-3 w-2.5 h-2.5 bg-accent rounded-full"></span>
                     </a>
                     <a href="#" data-section="user-invoices" class="sidebar-link">
                         <i class="fa-solid fa-receipt w-5"></i>
@@ -423,7 +447,7 @@
         </aside>
 
         <!-- MAIN PANEL -->
-        <main class="flex-grow min-w-0 space-y-6 xl:ml-64 px-4 sm:px-6 lg:px-8 py-6">
+        <main class="flex-grow min-w-0 space-y-6 xl:ms-64 px-4 sm:px-6 lg:px-8 py-6">
             
             <!-- SECTION 1: Overview -->
             <section id="user-overview" class="admin-section">
@@ -491,8 +515,8 @@
                     <!-- Progress Bar Visual -->
                     <div class="grid grid-cols-2 md:grid-cols-6 gap-4 text-center text-xs relative pt-2">
                         <!-- Connecting lines on desktop -->
-                        <div class="hidden md:block absolute top-[28px] left-[8%] right-[8%] h-1 bg-[#F3ECE3] dark:bg-[#2E221C] -z-0"></div>
-                        <div id="progress-line-fill" class="hidden md:block absolute top-[28px] left-[8%] w-[50%] h-1 bg-accent -z-0 transition-all duration-500"></div>
+                        <div class="hidden md:block absolute top-[28px] start-[8%] end-[8%] h-1 bg-[#F3ECE3] dark:bg-[#2E221C] -z-0"></div>
+                        <div id="progress-line-fill" class="hidden md:block absolute top-[28px] start-[8%] w-[50%] h-1 bg-accent -z-0 transition-all duration-500"></div>
 
                         <div class="progress-step flex flex-col items-center z-10" id="step-inquiry">
                             <div class="step-icon w-10 h-10 rounded-full bg-background border-2 border-border text-secondary-text flex items-center justify-center font-bold mb-2">
@@ -562,7 +586,7 @@
                             
                             <!-- Cake Base -->
                             <div>
-                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-birthday-cake text-accent mr-1"></i> 1. Select Cake Base</label>
+                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-birthday-cake text-accent me-1"></i> 1. Select Cake Base</label>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="flavor-matrix-bases">
                                     <!-- Dynamic bases -->
                                 </div>
@@ -570,7 +594,7 @@
 
                             <!-- Fillings -->
                             <div>
-                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-fill text-accent-light mr-1"></i> 2. Select Filling Core</label>
+                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-fill text-accent-light me-1"></i> 2. Select Filling Core</label>
                                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="flavor-matrix-fillings">
                                     <!-- Dynamic fillings -->
                                 </div>
@@ -578,7 +602,7 @@
 
                             <!-- Glazes -->
                             <div>
-                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-fill-drip text-accent mr-1"></i> 3. Select Outer Glaze Coating</label>
+                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-fill-drip text-accent me-1"></i> 3. Select Outer Glaze Coating</label>
                                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="flavor-matrix-glazes">
                                     <!-- Dynamic glazes -->
                                 </div>
@@ -586,7 +610,7 @@
 
                             <!-- Toppings -->
                             <div>
-                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-sparkles text-accent-light mr-1"></i> 4. Select Artisanal Topping</label>
+                                <label class="block font-bold text-sm text-primary-text mb-2"><i class="fas fa-sparkles text-accent-light me-1"></i> 4. Select Artisanal Topping</label>
                                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="flavor-matrix-toppings">
                                     <!-- Dynamic toppings -->
                                 </div>
@@ -693,7 +717,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <!-- Delivery settings form -->
                         <div class="space-y-5">
-                            <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2"><i class="fas fa-truck-ramp-box text-accent mr-1"></i> Setup Details</h4>
+                            <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2"><i class="fas fa-truck-ramp-box text-accent me-1"></i> Setup Details</h4>
                             
                             <div class="grid grid-cols-2 gap-4">
                                 <div>
@@ -729,7 +753,7 @@
                         <!-- Logistics Status Board -->
                         <div class="p-6 bg-hover rounded-2xl border border-border flex flex-col justify-between">
                             <div>
-                                <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2 mb-4"><i class="fas fa-satellite-dish text-accent-light mr-1"></i> Logistics Status Monitor</h4>
+                                <h4 class="font-bold text-sm text-primary-text font-serif border-b border-border pb-2 mb-4"><i class="fas fa-satellite-dish text-accent-light me-1"></i> Logistics Status Monitor</h4>
                                 
                                 <div class="space-y-4 text-xs">
                                     <div class="flex justify-between py-2 border-b border-border">
@@ -810,11 +834,11 @@
                         </div>
 
                         <div class="p-6 bg-hover rounded-2xl border-2 border-dashed border-accent flex flex-col sm:flex-row items-center justify-between">
-                            <div class="text-center sm:text-left mb-4 sm:mb-0">
+                            <div class="text-center sm:text-start mb-4 sm:mb-0">
                                 <h4 class="font-bold text-primary-text font-serif">Catering Cost Estimate</h4>
                                 <p class="text-xs text-secondary-text">Calculated assuming 2 items per guest.</p>
                             </div>
-                            <div class="text-center sm:text-right">
+                            <div class="text-center sm:text-end">
                                 <span class="text-3xl font-extrabold text-accent" id="lbl-total">$670.00</span>
                                 <button onclick="alert('Inquiry sent to planner with calculated quote details!')" class="block mt-2 px-4 py-2 bg-custom-gradient text-white text-xs font-bold rounded-lg shadow-sm">Save Estimate</button>
                             </div>
@@ -832,14 +856,14 @@
                                 <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center font-bold text-accent">CP</div>
                                 <div>
                                     <h4 class="font-bold text-sm text-primary-text">Chef Penelope</h4>
-                                    <p class="text-xs text-[#2E7D32] dark:text-[#81C784] font-bold flex items-center"><i class="fas fa-circle text-[9px] mr-1 animate-pulse"></i> Online</p>
+                                    <p class="text-xs text-[#2E7D32] dark:text-[#81C784] font-bold flex items-center"><i class="fas fa-circle text-[9px] me-1 animate-pulse"></i> Online</p>
                                 </div>
                             </div>
                             <button id="btn-clear-chat" class="text-[10px] text-red-500 font-bold hover:underline">Clear History</button>
                         </div>
                         
                         <!-- Messages Body -->
-                        <div class="space-y-4 h-[280px] overflow-y-auto pr-1 text-xs" id="chat-messages-container">
+                        <div class="space-y-4 h-[280px] overflow-y-auto pe-1 text-xs" id="chat-messages-container">
                             <!-- Dynamic messages -->
                         </div>
                     </div>
@@ -859,14 +883,14 @@
                         <p class="text-xs text-secondary-text">Download receipts and check summary details of your previous catering events.</p>
                     </div>
                     <div class="overflow-x-auto text-sm text-primary-text">
-                        <table class="w-full text-left border-collapse">
+                        <table class="w-full text-start border-collapse">
                             <thead>
                                 <tr class="bg-hover text-secondary-text text-xs uppercase border-b border-border">
                                     <th class="p-4 font-bold">Event Type</th>
                                     <th class="p-4 font-bold">Date Completed</th>
                                     <th class="p-4 font-bold">Total Items</th>
                                     <th class="p-4 font-bold">Amount Paid</th>
-                                    <th class="p-4 font-bold text-right">Receipt</th>
+                                    <th class="p-4 font-bold text-end">Receipt</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-border">
@@ -875,8 +899,8 @@
                                     <td class="p-4">October 12, 2025</td>
                                     <td class="p-4">250 pieces (Catering)</td>
                                     <td class="p-4 font-bold">$1,500.00</td>
-                                    <td class="p-4 text-right">
-                                        <button onclick="alert('Downloading Receipt PDF...')" class="text-accent hover:underline text-xs"><i class="fas fa-file-pdf mr-1"></i> Download</button>
+                                    <td class="p-4 text-end">
+                                        <button onclick="alert('Downloading Receipt PDF...')" class="text-accent hover:underline text-xs"><i class="fas fa-file-pdf me-1"></i> Download</button>
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-hover/30 transition">
@@ -884,8 +908,8 @@
                                     <td class="p-4">December 05, 2025</td>
                                     <td class="p-4">120 pieces (Macarons/Pops)</td>
                                     <td class="p-4 font-bold">$780.00</td>
-                                    <td class="p-4 text-right">
-                                        <button onclick="alert('Downloading Receipt PDF...')" class="text-accent hover:underline text-xs"><i class="fas fa-file-pdf mr-1"></i> Download</button>
+                                    <td class="p-4 text-end">
+                                        <button onclick="alert('Downloading Receipt PDF...')" class="text-accent hover:underline text-xs"><i class="fas fa-file-pdf me-1"></i> Download</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -903,7 +927,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Profile Card -->
                         <div class="p-5 bg-hover rounded-xl border border-border">
-                            <h4 class="font-bold text-sm text-primary-text mb-4 font-serif"><i class="fa-solid fa-address-card mr-2 text-accent"></i>Delivery and Contact Details</h4>
+                            <h4 class="font-bold text-sm text-primary-text mb-4 font-serif"><i class="fa-solid fa-address-card me-2 text-accent"></i>Delivery and Contact Details</h4>
                             <div class="space-y-3">
                                 <div>
                                     <label class="block text-xs font-semibold text-secondary-text mb-1">Full Name</label>
@@ -918,7 +942,7 @@
                         
                         <!-- Preferences -->
                         <div class="p-5 bg-hover rounded-xl border border-border">
-                            <h4 class="font-bold text-sm text-primary-text mb-4 font-serif"><i class="fa-solid fa-bell mr-2 text-accent-light"></i>Preferences</h4>
+                            <h4 class="font-bold text-sm text-primary-text mb-4 font-serif"><i class="fa-solid fa-bell me-2 text-accent-light"></i>Preferences</h4>
                             <div class="space-y-3">
                                 <label class="flex items-center gap-2 text-secondary-text text-sm cursor-pointer mt-2">
                                     <input type="checkbox" checked class="accent-accent" /> Email alerts for baking stage changes
@@ -1071,7 +1095,14 @@
             const closeSidebar = document.getElementById('close-sidebar');
 
             const toggleMobile = (open) => {
-                sidebar.classList.toggle('-translate-x-full', !open);
+                const isRtl = html.getAttribute('dir') === 'rtl';
+                if (isRtl) {
+                    sidebar.classList.toggle('translate-x-full', !open);
+                    sidebar.classList.remove('-translate-x-full');
+                } else {
+                    sidebar.classList.toggle('-translate-x-full', !open);
+                    sidebar.classList.remove('translate-x-full');
+                }
                 overlay.classList.toggle('active', open);
                 document.body.style.overflow = open ? 'hidden' : '';
             };
@@ -1357,7 +1388,7 @@
                         <div class="bg-card-custom border border-border rounded-xl overflow-hidden hover:shadow-md transition">
                             <img src="${imgSrc}" class="w-full h-36 object-cover" alt="Inspiration" />
                             <div class="p-3 space-y-1 relative">
-                                <button onclick="deleteInspiration(${insp.id})" class="absolute top-2 right-2 text-red-500 hover:text-red-700 bg-background/80 p-1.5 rounded-full"><i class="fas fa-trash text-xs"></i></button>
+                                <button onclick="deleteInspiration(${insp.id})" class="absolute top-2 end-2 text-red-500 hover:text-red-700 bg-background/80 p-1.5 rounded-full"><i class="fas fa-trash text-xs"></i></button>
                                 <h5 class="font-bold text-xs text-primary-text font-serif">${insp.name}</h5>
                                 <p class="text-[10px] text-secondary-text leading-relaxed">${insp.note}</p>
                                 <div class="text-[9px] text-secondary-text pt-2 flex justify-between">
@@ -1445,7 +1476,7 @@
                         statusBadge = '<span class="bg-emerald-100 text-emerald-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Approved</span>';
                         actionPanel = `
                             <div class="border-t border-border pt-3 mt-3 text-xs text-emerald-600 font-medium">
-                                <i class="fas fa-check-circle mr-1"></i> You approved this proof. Chef Penelope is working based on this layout!
+                                <i class="fas fa-check-circle me-1"></i> You approved this proof. Chef Penelope is working based on this layout!
                             </div>
                         `;
                     } else {
@@ -1554,7 +1585,7 @@
 
                 container.innerHTML = messages.map(msg => {
                     const isChef = msg.sender === 'chef';
-                    const bgClass = isChef ? 'bg-hover mr-auto text-left' : 'bg-accent/10 ml-auto text-right';
+                    const bgClass = isChef ? 'bg-hover me-auto text-start' : 'bg-accent/10 ms-auto text-end';
                     const senderLabel = isChef ? 'Chef Penelope' : 'You';
                     return `
                         <div class="p-3 rounded-xl max-w-[85%] ${bgClass}">

@@ -38,30 +38,54 @@
         --color-primary-text: #3D271D; /* Rich dark chocolate cocoa */
         --color-secondary-text: #7C6053; /* Warm taupe / milk chocolate */
         --color-accent: #FF5E86; /* Strawberry Rose Pink (Primary) */
-        --color-accent-light: #D4AF37; /* Honey Pastry Gold (Secondary) */
+        --color-accent-light: #A87C00; /* Honey Pastry Gold (Secondary) */
         --color-border: #F3ECE3; /* Soft crust beige */
         --color-hover: #FFF5E6; /* Warm vanilla cream hover */
     }
     html[data-theme='dark'] {
-        --color-background: #130C08; /* Deep dark warm chocolate */
-        --color-primary-text: #FDFBF7; /* Soft vanilla cream */
-        --color-secondary-text: #BCAAA4; /* Muted warm taupe */
-        --color-accent: #FF7597; /* Berry Pink (Primary) */
-        --color-accent-light: #F3C052; /* Warm bright gold (Secondary) */
-        --color-border: #2E221C; /* Dark chocolate border */
-        --color-hover: #231711; /* Dark chocolate hover */
+        --color-background: #0E0F12; /* Premium dark charcoal grey */
+        --color-primary-text: #F3F4F6; /* Soft light grey / white */
+        --color-secondary-text: #9CA3AF; /* Muted light grey */
+        --color-accent: #FF5E86; /* Strawberry Rose Pink (Primary Brand Color) */
+        --color-accent-light: #D4AF37; /* Honey Pastry Gold (Secondary Brand Color) */
+        --color-border: #23272E; /* Clean dark grey border */
+        --color-hover: #1A1C20; /* Alternate dark grey for sections */
     }
 
     body {
       font-family: 'Outfit', sans-serif;
     }
 
-    h1, h2, h3, h4, h5, h6, .font-serif {
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif !important;
+      font-weight: 550 !important;
+    }
+    .font-serif {
       font-family: 'Playfair Display', serif !important;
     }
-
-    .font-black {
-      font-weight: 900 !important;
+    h1 {
+      font-size: 2.25rem !important; /* 36px */
+    }
+    @media (min-width: 640px) {
+      h1 {
+        font-size: 3.75rem !important; /* 60px */
+      }
+    }
+    h2 {
+      font-size: 1.875rem !important; /* 30px */
+    }
+    @media (min-width: 640px) {
+      h2 {
+        font-size: 2.25rem !important; /* 36px */
+      }
+    }
+    h3 {
+      font-size: 1.25rem !important; /* 20px */
+    }
+    @media (min-width: 640px) {
+      h3 {
+        font-size: 1.5rem !important; /* 24px */
+      }
     }
 
     [dir="rtl"] .rtl-flip {
@@ -194,9 +218,9 @@
         <div class="absolute inset-0 brand-overlay"></div>
         <!-- decorative elements -->
         <div class="absolute inset-0 opacity-20">
-          <i class="fas fa-cookie text-8xl absolute bottom-6 right-6 text-white/30"></i>
-          <i class="fas fa-cake-candles text-6xl absolute top-12 left-4 text-white/20"></i>
-          <i class="fas fa-ice-cream text-5xl absolute bottom-32 left-8 text-primary/30"></i>
+          <i class="fas fa-cookie text-8xl absolute bottom-6 end-6 text-white/30"></i>
+          <i class="fas fa-cake-candles text-6xl absolute top-12 start-4 text-white/20"></i>
+          <i class="fas fa-ice-cream text-5xl absolute bottom-32 start-8 text-primary/30"></i>
         </div>
         
         <div class="relative z-10">
@@ -285,16 +309,16 @@
             <div>
               <label class="block text-[9px] font-semibold uppercase tracking-wider text-secondary-text mb-1">Password</label>
               <div class="relative">
-                <input type="password" id="signup-password" required class="input-field w-full px-4 py-2 rounded-xl text-sm pr-10 border" placeholder="Create password">
-                <button type="button" onclick="togglePasswordVisibility('signup-password', this)" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"><i class="far fa-eye text-xs"></i></button>
+                <input type="password" id="signup-password" required class="input-field w-full px-4 py-2 rounded-xl text-sm pe-10 border" placeholder="Create password">
+                <button type="button" onclick="togglePasswordVisibility('signup-password', this)" class="absolute inset-y-0 end-0 pe-3 flex items-center text-gray-400 hover:text-gray-600"><i class="far fa-eye text-xs"></i></button>
               </div>
             </div>
 
             <div>
               <label class="block text-[9px] font-semibold uppercase tracking-wider text-secondary-text mb-1">Confirm Password</label>
               <div class="relative">
-                <input type="password" id="signup-confirm-password" required class="input-field w-full px-4 py-2 rounded-xl text-sm pr-10 border" placeholder="Confirm password">
-                <button type="button" onclick="togglePasswordVisibility('signup-confirm-password', this)" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"><i class="far fa-eye text-xs"></i></button>
+                <input type="password" id="signup-confirm-password" required class="input-field w-full px-4 py-2 rounded-xl text-sm pe-10 border" placeholder="Confirm password">
+                <button type="button" onclick="togglePasswordVisibility('signup-confirm-password', this)" class="absolute inset-y-0 end-0 pe-3 flex items-center text-gray-400 hover:text-gray-600"><i class="far fa-eye text-xs"></i></button>
               </div>
             </div>
 

@@ -212,9 +212,35 @@
 
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-lg border-b border-border bg-background" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[70px]">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-            </a>
+            <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
 
             <!-- Desktop Nav -->
             <div class="hidden xl:flex items-center xl:space-x-3 2xl:space-x-6">
@@ -298,232 +324,199 @@
     </div>
 </section>
 
-<!-- Section 2: Filterable Gallery Grid - Cake Pops -->
-<section class="py-12 bg-background transition-colors duration-300">
+<!-- Section 2: Interactive Filterable Dessert Gallery -->
+<section class="py-16 bg-background transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-extrabold text-primary-text">Custom Cake Pops</h2>
-            <p class="text-secondary-text mt-2">From classic to sculpted — every pop is a miniature masterpiece.</p>
+        <!-- Interactive Category Filters -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12" id="gallery-filters">
+            <button class="filter-btn active px-6 py-2.5 rounded-full text-sm font-semibold border border-accent bg-accent text-white shadow-sm transition-all duration-300" data-filter="all">All Creations</button>
+            <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-secondary-text hover:border-accent hover:text-accent shadow-sm transition-all duration-300" data-filter="pops">Cake Pops</button>
+            <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-secondary-text hover:border-accent hover:text-accent shadow-sm transition-all duration-300" data-filter="tables">Dessert Tables</button>
+            <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-secondary-text hover:border-accent hover:text-accent shadow-sm transition-all duration-300" data-filter="macarons">French Macarons</button>
+            <button class="filter-btn px-6 py-2.5 rounded-full text-sm font-semibold border border-border bg-background text-secondary-text hover:border-accent hover:text-accent shadow-sm transition-all duration-300" data-filter="bts">Behind The Scenes</button>
         </div>
         
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+        <!-- Unified Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6" id="portfolio-grid">
+            <!-- Pops -->
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/home2_rosegold.png" alt="Rose gold wedding cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Rose Gold Wedding</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_birthday_unicorn.png" alt="Unicorn birthday cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Unicorn Birthday</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_holiday_christmas.png" alt="Christmas holiday cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Christmas Collection</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_corporate_branded.png" alt="Corporate logo cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Branded Corporate</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_animal.png" alt="Sculpted animal cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Sculpted Animals</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_bridal_pastel.png" alt="Pastel bridal shower pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Pastel Bridal</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_holiday_halloween.png" alt="Halloween spooky cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Halloween Spooky</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="pops">
                 <img src="assets/gallery_gender.png" alt="Gender reveal cake pops" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                     <span class="text-white text-sm font-medium text-center px-2">Gender Reveal</span>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- Section 3: Dessert Table & Macaron Gallery -->
-<section class="py-16 bg-hover transition-colors duration-300">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-extrabold text-primary-text">Dessert Tables and Macarons</h2>
-            <p class="text-secondary-text mt-2">Stunning displays and delicate French macarons for every occasion.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="relative group overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-                <img src="assets/gallery_wedding_table.png" alt="Luxury wedding dessert table" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white font-bold text-lg">Luxury Wedding Table</span>
+            <!-- Tables -->
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="tables">
+                <img src="assets/gallery_wedding_table.png" alt="Luxury wedding dessert table" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold text-center px-2">Luxury Wedding Table</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer">
-                <img src="assets/home2_macarontower.png" alt="Pastel macaron tower" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white font-bold text-lg">French Macaron Tower</span>
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="tables">
+                <img src="assets/home2_macarontower.png" alt="Pastel macaron tower" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold text-center px-2">French Macaron Tower</span>
                 </div>
             </div>
-        </div>
-        
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="tables">
+                <img src="assets/home2_dessertbar.png" alt="Birthday dessert bar" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold text-center px-2">Birthday Dessert Bar</span>
+                </div>
+            </div>
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="tables">
+                <img src="assets/gallery_holiday_desserttable.png" alt="Holiday dessert table" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold text-center px-2">Holiday Table</span>
+                </div>
+            </div>
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="tables">
+                <img src="assets/gallery_wedding_cupcake_tower.png" alt="Wedding cupcake tower" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white font-bold text-center px-2">Wedding Tower</span>
+                </div>
+            </div>
+
+            <!-- Macarons & Sweets -->
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_macaron_flavors.png" alt="Macaron flavors display" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs text-center px-2">Flavor Display</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Macaron Flavor Display</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
-                <img src="assets/home2_dessertbar.png" alt="Birthday dessert bar" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs text-center px-2">Birthday Dessert Bar</span>
-                </div>
-            </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_macaron_gift_boxes.png" alt="Macaron gift boxes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs text-center px-2">Gift Boxes</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Gift Box Packages</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
-                <img src="assets/gallery_holiday_desserttable.png" alt="Holiday dessert table" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs text-center px-2">Holiday Table</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Section 4: Cupcakes & Sweet Treats Gallery -->
-<section class="py-16 bg-background transition-colors duration-300">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-extrabold text-primary-text">Cupcakes and Sweet Treats</h2>
-            <p class="text-secondary-text mt-2">Gourmet cupcakes, chocolate-dipped delights, and mini desserts.</p>
-        </div>
-        
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_luxury_cupcakes.png" alt="Luxury cupcakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Luxury Cupcakes</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Luxury Cupcakes</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_chocolate_strawberries.png" alt="Chocolate dipped strawberries" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Chocolate Strawberries</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Chocolate Strawberries</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_mini_tarts.png" alt="Mini tarts display" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Mini Tarts</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Gourmet Mini Tarts</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_cookie_platter.png" alt="Cookie platter" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Artisan Cookies</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Artisan Cookie Tray</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/home2_birthdaycupcake.png" alt="Birthday cupcakes" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Birthday Cupcakes</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Birthday Cupcakes</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
-                <img src="assets/gallery_wedding_cupcake_tower.png" alt="Wedding cupcake tower" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Wedding Tower</span>
-                </div>
-            </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_petits_fours.png" alt="Petits fours display" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Petits Fours</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Classic Petits Fours</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="macarons">
                 <img src="assets/gallery_donut_wall.png" alt="Donut wall display" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-sm text-center px-2">Donut Wall</span>
+                    <span class="text-white text-sm font-medium text-center px-2">Decorated Donut Wall</span>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- Section 5: Event & Setup BTS Gallery -->
-<section class="py-16 bg-hover transition-colors duration-300">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-extrabold text-primary-text">Event Setups and Behind the Scenes</h2>
-            <p class="text-secondary-text mt-2">See how we transform venues into stunning dessert experiences.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
-                <img src="assets/gallery_setup_progress.png" alt="Wedding setup in progress" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
-                    <span class="text-white font-medium">Wedding Setup</span>
+            <!-- BTS -->
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
+                <img src="assets/gallery_setup_progress.png" alt="Wedding setup in progress" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Wedding Setup BTS</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
-                <img src="assets/gallery_setup_corporate.png" alt="Corporate event setup" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
-                    <span class="text-white font-medium">Corporate Gala</span>
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
+                <img src="assets/gallery_setup_corporate.png" alt="Corporate event setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Corporate Setup BTS</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
-                <img src="assets/gallery_kitchen_bts.png" alt="Kitchen behind the scenes decorating" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
-                    <span class="text-white font-medium">In Our Kitchen</span>
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
+                <img src="assets/gallery_kitchen_bts.png" alt="Kitchen behind the scenes decorating" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Kitchen Crafting BTS</span>
                 </div>
             </div>
-        </div>
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
                 <img src="assets/gallery_packaging_display.png" alt="Packaging display" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs">Gift Packaging</span>
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Gift Wrapping BTS</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
                 <img src="assets/gallery_delivery_team.png" alt="Delivery team" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs">Delivery Team</span>
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Delivery Crew BTS</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
                 <img src="assets/gallery_custom_signage.png" alt="Custom labels and signage" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs">Custom Signage</span>
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Custom Dessert Signage</span>
                 </div>
             </div>
-            <div class="relative group overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="gallery-item relative group overflow-hidden rounded-2xl aspect-square cursor-pointer transition-all duration-300" data-category="bts">
                 <img src="assets/gallery_floral_backdrop.png" alt="Floral backdrop setup" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                    <span class="text-white text-xs">Floral Backdrops</span>
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <span class="text-white text-sm font-medium text-center px-2">Floral Backdrops BTS</span>
                 </div>
             </div>
         </div>
@@ -558,9 +551,35 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-                    </a>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-300 mt-4">
                         Creating memorable, elegant, and handcrafted cake pops, cupcakes, and french macarons for high-end celebrations. Custom themed setups designed to wow your guests.
                     </p>
@@ -605,8 +624,34 @@
         <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
         <div id="drawer-content" class="absolute top-0 start-0 end-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out">
             <div class="flex justify-between items-center pb-4 border-b border-border">
-                <a href="index.html" class="text-2xl font-serif font-extrabold tracking-wide">
-                    <span style="color: var(--color-accent);">Sweet Pops</span>
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             </div>
@@ -811,6 +856,40 @@
                     m.style.opacity = '';
                     m.style.visibility = '';
                     m.style.transform = '';
+                });
+            });
+
+            // Interactive Portfolio Filtering Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button classes
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-accent', 'text-white', 'border-accent', 'active');
+                        b.classList.add('bg-background', 'text-secondary-text', 'border-border');
+                    });
+                    btn.classList.remove('bg-background', 'text-secondary-text', 'border-border');
+                    btn.classList.add('bg-accent', 'text-white', 'border-accent', 'active');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 250);
+                        }
+                    });
                 });
             });
 });

@@ -212,9 +212,35 @@
 
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-lg border-b border-border bg-background" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[70px]">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-            </a>
+            <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
 
             <!-- Desktop Nav -->
             <div class="hidden xl:flex items-center xl:space-x-3 2xl:space-x-6">
@@ -336,7 +362,7 @@
             </div>
             <!-- Service 3 -->
             <div class="bg-hover border border-border rounded-2xl overflow-hidden hover:shadow-xl transition">
-                <img src="assets/home2_dessertbar.png" alt="Event coordination" class="w-full h-56 object-cover">
+                <img src="assets/gallery_wedding_table.png" alt="Event coordination" class="w-full h-56 object-cover">
                 <div class="p-6">
                     <i class="fas fa-chalkboard-user text-2xl text-accent mb-3"></i>
                     <h3 class="text-xl font-bold text-primary-text">Event Coordination</h3>
@@ -356,65 +382,88 @@
             <p class="text-secondary-text mt-4">Choose the perfect package or let us create a custom quote for your specific needs.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="space-y-10 max-w-4xl mx-auto">
             <!-- Silver Package -->
-            <div class="bg-background border border-border rounded-2xl overflow-hidden hover:shadow-xl transition flex flex-col">
-                <img src="assets/home2_birthdaycupcake.png" alt="Petite catering package" class="w-full h-48 object-cover">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-secondary-text">Silver — Petite</h3>
-                    <div class="mt-2"><span class="text-3xl font-black text-primary-text">$380</span><span class="text-secondary-text">/event</span></div>
-                    <p class="text-sm text-secondary-text mt-1">Serves 15-20 guests</p>
-                    <hr class="my-4 border-border">
-                    <ul class="space-y-2 text-sm text-secondary-text mb-6">
-                        <li><i class="fas fa-check text-accent me-2"></i> 24 Custom Cake Pops</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 12 French Macarons</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 12 Gourmet Cupcakes</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Standard display risers</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Delivery and setup included</li>
-                    </ul>
-                    <a href="#catering-form" class="mt-auto block text-center py-2.5 border border-accent text-accent font-bold rounded-xl hover:bg-accent hover:text-white transition">Inquire Silver Package</a>
+            <div class="flex flex-col md:flex-row bg-background border border-border rounded-3xl overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="w-full md:w-5/12 h-56 md:h-auto relative shrink-0">
+                    <img src="assets/birthday_cupcake_tower.png" alt="Petite catering package" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-7/12 p-6 sm:p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-hover text-accent-light inline-block">Petite</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-primary-text font-serif mt-2">Silver — Petite Package</h3>
+                        <div class="mt-1 flex items-baseline gap-2">
+                            <span class="text-2xl sm:text-3xl font-black text-primary-text">$380</span>
+                            <span class="text-secondary-text text-sm">/event</span>
+                        </div>
+                        <p class="text-xs text-secondary-text mt-1">Serves 15-20 guests</p>
+                        <hr class="my-4 border-border">
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-secondary-text mb-6">
+                            <li><i class="fas fa-check text-accent me-2"></i> 24 Custom Cake Pops</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 12 French Macarons</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 12 Gourmet Cupcakes</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Standard display risers</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Delivery & setup included</li>
+                        </ul>
+                    </div>
+                    <a href="#catering-form" class="w-full py-2.5 border border-accent text-accent font-bold rounded-xl hover:bg-accent hover:text-white text-center transition">Inquire Silver Package</a>
                 </div>
             </div>
 
             <!-- Gold Package - Popular -->
-            <div class="bg-background border-2 border-accent rounded-2xl overflow-hidden shadow-lg relative flex flex-col">
-                <span class="absolute top-0 end-0 bg-accent text-white px-4 py-1 rounded-bl-xl text-xs font-bold">Most Popular</span>
-                <img src="assets/home2_rosegold.png" alt="Grand catering package" class="w-full h-48 object-cover">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-accent">Gold — Grand Buffet</h3>
-                    <div class="mt-2"><span class="text-3xl font-black text-primary-text">$780</span><span class="text-secondary-text">/event</span></div>
-                    <p class="text-sm text-secondary-text mt-1">Serves 40-50 guests</p>
-                    <hr class="my-4 border-border">
-                    <ul class="space-y-2 text-sm text-secondary-text mb-6">
-                        <li><i class="fas fa-check text-accent me-2"></i> 48 Custom Cake Pops</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 36 French Macarons</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 24 Gourmet Cupcakes</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 24 Chocolate-Dipped Strawberries</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Full table styling and backdrop</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Custom flavor selection</li>
-                    </ul>
-                    <a href="#catering-form" class="mt-auto block text-center py-2.5 book-btn text-white font-bold rounded-xl shadow-md">Inquire Gold Package</a>
+            <div class="flex flex-col md:flex-row-reverse bg-background border-2 border-accent rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 relative">
+                <span class="absolute top-4 start-4 bg-accent text-white px-4 py-1 rounded-full text-xs font-bold shadow-sm z-10">Most Popular</span>
+                <div class="w-full md:w-5/12 h-56 md:h-auto relative shrink-0">
+                    <img src="assets/gold_cakepop_tower.png" alt="Grand catering package" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-7/12 p-6 sm:p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-accent/10 text-accent inline-block">Grand Buffet</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-accent font-serif mt-2">Gold — Grand Buffet</h3>
+                        <div class="mt-1 flex items-baseline gap-2">
+                            <span class="text-2xl sm:text-3xl font-black text-primary-text">$780</span>
+                            <span class="text-secondary-text text-sm">/event</span>
+                        </div>
+                        <p class="text-xs text-secondary-text mt-1">Serves 40-50 guests</p>
+                        <hr class="my-4 border-border">
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-secondary-text mb-6">
+                            <li><i class="fas fa-check text-accent me-2"></i> 48 Custom Cake Pops</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 36 French Macarons</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 24 Gourmet Cupcakes</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 24 Choc Strawberries</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Full styling & backdrop</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Custom flavor selection</li>
+                        </ul>
+                    </div>
+                    <a href="#catering-form" class="w-full py-2.5 book-btn text-white font-bold rounded-xl text-center shadow-md">Inquire Gold Package</a>
                 </div>
             </div>
 
             <!-- Platinum Package -->
-            <div class="bg-background border border-border rounded-2xl overflow-hidden hover:shadow-xl transition flex flex-col">
-                <img src="assets/catering_platinum.png" alt="Luxury wedding catering sweet table setup" class="w-full h-48 object-cover">
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-bold text-secondary-text">Platinum — Luxury Collection</h3>
-                    <div class="mt-2"><span class="text-3xl font-black text-primary-text">$1,500+</span><span class="text-secondary-text">/event</span></div>
-                    <p class="text-sm text-secondary-text mt-1">Serves 100+ guests</p>
-                    <hr class="my-4 border-border">
-                    <ul class="space-y-2 text-sm text-secondary-text mb-6">
-                        <li><i class="fas fa-check text-accent me-2"></i> 100+ Custom Cake Pops</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 72 Premium Macarons</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> 48 Luxury Cupcakes</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Mini tarts and petits fours</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Multi-tier dessert stands</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Floral decor and custom backdrop</li>
-                        <li><i class="fas fa-check text-accent me-2"></i> Post-event pickup</li>
-                    </ul>
-                    <a href="#catering-form" class="mt-auto block text-center py-2.5 border border-accent text-accent font-bold rounded-xl hover:bg-accent hover:text-white transition">Inquire Platinum Package</a>
+            <div class="flex flex-col md:flex-row bg-background border border-border rounded-3xl overflow-hidden hover:shadow-xl transition duration-300">
+                <div class="w-full md:w-5/12 h-56 md:h-auto relative shrink-0">
+                    <img src="assets/catering_platinum.png" alt="Luxury wedding catering" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-7/12 p-6 sm:p-8 flex flex-col justify-between flex-grow">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest font-semibold px-2 py-0.5 rounded bg-hover text-accent-light inline-block">Royal Feast</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-primary-text font-serif mt-2">Platinum — Royal Celebration</h3>
+                        <div class="mt-1 flex items-baseline gap-2">
+                            <span class="text-2xl sm:text-3xl font-black text-primary-text">$1,450+</span>
+                            <span class="text-secondary-text text-sm">/event</span>
+                        </div>
+                        <p class="text-xs text-secondary-text mt-1">Serves 100+ guests</p>
+                        <hr class="my-4 border-border">
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-secondary-text mb-6">
+                            <li><i class="fas fa-check text-accent me-2"></i> 100+ Custom Cake Pops</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 72 French Macarons</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 48 Gourmet Cupcakes</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> 48 Dessert Shooters</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Luxury cake pop towers</li>
+                            <li><i class="fas fa-check text-accent me-2"></i> Consultation & tasting</li>
+                        </ul>
+                    </div>
+                    <a href="#catering-form" class="w-full py-2.5 border border-accent text-accent font-bold rounded-xl hover:bg-accent hover:text-white text-center transition">Inquire Platinum Package</a>
                 </div>
             </div>
         </div>
@@ -530,7 +579,7 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="rounded-3xl overflow-hidden shadow-2xl border border-border h-full">
-                <img src="hero_cakepop.png" alt="Catering inquiry contact" class="w-full h-full object-cover min-h-[550px]">
+                <img src="assets/about_award_winning.png" alt="Catering inquiry contact" class="w-full h-full object-cover min-h-[550px]">
             </div>
             <div class="bg-hover border border-border p-8 rounded-3xl shadow-xl">
                 <div class="mb-8">
@@ -583,9 +632,35 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-                    </a>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-300 mt-4">
                         Creating memorable, elegant, and handcrafted cake pops, cupcakes, and french macarons for high-end celebrations. Custom themed setups designed to wow your guests.
                     </p>
@@ -630,8 +705,34 @@
         <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
         <div id="drawer-content" class="absolute top-0 start-0 end-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out">
             <div class="flex justify-between items-center pb-4 border-b border-border">
-                <a href="index.html" class="text-2xl font-serif font-extrabold tracking-wide">
-                    <span style="color: var(--color-accent);">Sweet Pops</span>
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             </div>

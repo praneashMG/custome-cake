@@ -212,9 +212,35 @@
 
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-lg border-b border-border bg-background" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[70px]">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-            </a>
+            <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
 
             <!-- Desktop Nav -->
             <div class="hidden xl:flex items-center xl:space-x-3 2xl:space-x-6">
@@ -407,35 +433,72 @@
     </div>
 </section>
 
-<!-- Section 5: Milestones & Achievements -->
+<!-- Section 5: Milestones Journey Timeline -->
 <section class="py-20 bg-hover transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="order-last lg:order-first">
-                <span class="text-accent-light font-bold uppercase tracking-wider text-sm">Recognition</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-primary-text">Award-Winning Dessert Catering</h2>
-                <p class="text-secondary-text mt-4 leading-relaxed">
-                    Our commitment to excellence has been recognized by industry leaders and happy clients alike.
-                </p>
-                <div class="space-y-4 mt-8">
-                    <div class="flex items-center gap-4 p-4 bg-background border border-border rounded-xl">
-                        <i class="fas fa-trophy text-3xl text-accent"></i>
-                        <div><h4 class="font-bold text-primary-text">Best Wedding Dessert Caterer 2024</h4><p class="text-sm text-secondary-text">Bridal Choice Awards</p></div>
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-accent font-bold uppercase tracking-wider text-sm">Milestones</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-primary-text font-serif">Our Sweet Journey</h2>
+            <p class="text-secondary-text mt-4">Key moments that shaped Sweet Pops into the brand it is today.</p>
+        </div>
+        
+        <div class="relative max-w-5xl mx-auto px-4 md:px-0">
+            <!-- Central Line (hidden on mobile, centered on desktop) -->
+            <div class="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2 opacity-60"></div>
+            
+            <!-- Milestone 1 -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
+                <div class="w-full md:w-[45%] md:text-end pl-12 md:pl-0 order-last md:order-first">
+                    <div class="bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                        <span class="text-accent font-bold text-sm">2018</span>
+                        <h3 class="text-xl font-bold text-primary-text mt-1 mb-2 font-serif">The Home Bakery Beginning</h3>
+                        <p class="text-secondary-text text-sm leading-relaxed">Sweet Pops was founded in a cozy home kitchen by Chef Sarah Mitchell, baking custom cake pops for local friends and family events.</p>
                     </div>
-                    <div class="flex items-center gap-4 p-4 bg-background border border-border rounded-xl">
-                        <i class="fas fa-medal text-3xl text-accent-light"></i>
-                        <div><h4 class="font-bold text-primary-text">Top 10 Cake Pop Artists in the US</h4><p class="text-sm text-secondary-text">Dessert Professional Magazine</p></div>
-                    </div>
-                    <div class="flex items-center gap-4 p-4 bg-background border border-border rounded-xl">
-                        <i class="fas fa-star text-3xl text-accent"></i>
-                        <div><h4 class="font-bold text-primary-text">5-Star Rating (500+ Reviews)</h4><p class="text-sm text-secondary-text">Google and The Knot</p></div>
+                </div>
+                <!-- Node Dot -->
+                <div class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-border bg-accent z-10 flex items-center justify-center text-white text-xs font-bold shadow-md">18</div>
+                <div class="hidden md:block w-[45%]"></div>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
+                <div class="hidden md:block w-[45%]"></div>
+                <!-- Node Dot -->
+                <div class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-border bg-accent-light z-10 flex items-center justify-center text-white text-xs font-bold shadow-md">20</div>
+                <div class="w-full md:w-[45%] pl-12 md:pl-0">
+                    <div class="bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                        <span class="text-accent font-bold text-sm">2020</span>
+                        <h3 class="text-xl font-bold text-primary-text mt-1 mb-2 font-serif">Our First Boutique Studio</h3>
+                        <p class="text-secondary-text text-sm leading-relaxed">We opened our dedicated pastry studio in Los Angeles, allowing us to expand our recipe catalog and hire our first design specialists.</p>
                     </div>
                 </div>
             </div>
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-border">
-                <img src="assets/about_award_winning.png" alt="Award winning dessert setup" class="w-full h-[500px] object-cover hover:scale-105 transition duration-500">
-                <div class="absolute bottom-6 start-6 end-6 bg-white/90 dark:bg-black/80 backdrop-blur-md p-4 rounded-xl border border-border">
-                    <p class="text-primary-text font-medium text-sm">"Exceeding expectations, one dessert at a time."</p>
+
+            <!-- Milestone 3 -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
+                <div class="w-full md:w-[45%] md:text-end pl-12 md:pl-0 order-last md:order-first">
+                    <div class="bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                        <span class="text-accent font-bold text-sm">2022</span>
+                        <h3 class="text-xl font-bold text-primary-text mt-1 mb-2 font-serif">Full-Service Catering Launches</h3>
+                        <p class="text-secondary-text text-sm leading-relaxed">Launched white-glove event setup and dessert bar coordinate services, designing layouts for weddings and corporate gatherings up to 500 guests.</p>
+                    </div>
+                </div>
+                <!-- Node Dot -->
+                <div class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-border bg-accent z-10 flex items-center justify-center text-white text-xs font-bold shadow-md">22</div>
+                <div class="hidden md:block w-[45%]"></div>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between">
+                <div class="hidden md:block w-[45%]"></div>
+                <!-- Node Dot -->
+                <div class="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full border-4 border-border bg-accent-light z-10 flex items-center justify-center text-white text-xs font-bold shadow-md">24</div>
+                <div class="w-full md:w-[45%] pl-12 md:pl-0">
+                    <div class="bg-background border border-border p-6 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                        <span class="text-accent font-bold text-sm">2024</span>
+                        <h3 class="text-xl font-bold text-primary-text mt-1 mb-2 font-serif">Award-Winning Distinction</h3>
+                        <p class="text-secondary-text text-sm leading-relaxed">Awarded "Best Wedding Dessert Caterer" by the Bridal Choice Awards and listed as a Top 10 Cake Pop Artist in the US.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -470,9 +533,35 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-                    </a>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-300 mt-4">
                         Creating memorable, elegant, and handcrafted cake pops, cupcakes, and french macarons for high-end celebrations. Custom themed setups designed to wow your guests.
                     </p>
@@ -517,8 +606,34 @@
         <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
         <div id="drawer-content" class="absolute top-0 start-0 end-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out">
             <div class="flex justify-between items-center pb-4 border-b border-border">
-                <a href="index.html" class="text-2xl font-serif font-extrabold tracking-wide">
-                    <span style="color: var(--color-accent);">Sweet Pops</span>
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             </div>

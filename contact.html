@@ -212,9 +212,35 @@
 
     <header class="sticky top-0 z-50 transition-colors duration-300 shadow-lg border-b border-border bg-background" id="main-header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between h-[70px]">
-            <a href="index.html" class="flex items-center space-x-2">
-                <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-            </a>
+            <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
 
             <!-- Desktop Nav -->
             <div class="hidden xl:flex items-center xl:space-x-3 2xl:space-x-6">
@@ -299,11 +325,11 @@
 </section>
 
 <!-- Section 2: Contact Info Cards -->
-<section class="py-16 bg-background transition-colors duration-300">
+<section class="py-16 bg-hover transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Phone Card -->
-            <div class="bg-hover border border-border rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition">
+            <div class="bg-background border border-border rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition">
                 <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-5">
                     <i class="fa-solid fa-phone text-2xl text-accent"></i>
                 </div>
@@ -314,19 +340,19 @@
             </div>
             
             <!-- Email Card -->
-            <div class="bg-hover border border-border rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition">
-                <div class="w-16 h-16 mx-auto rounded-full bg-accent-light/10 flex items-center justify-center mb-5">
-                    <i class="fas fa-envelope-open-text text-2xl text-accent-light"></i>
+            <div class="bg-background border border-border rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition">
+                <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-5">
+                    <i class="fas fa-envelope-open-text text-2xl text-accent"></i>
                 </div>
                 <h3 class="text-xl font-bold text-primary-text">Email Us</h3>
                 <p class="text-secondary-text mt-2">General Inquiries</p>
                 <p class="text-accent font-medium mt-3">hello@sweetpops.com</p>
                 <p class="text-secondary-text text-sm mt-2">Catering Orders</p>
-                <p class="text-accent-light font-medium">catering@sweetpops.com</p>
+                <p class="text-accent font-medium">catering@sweetpops.com</p>
             </div>
             
             <!-- Visit Card -->
-            <div class="bg-hover border border-border rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition">
+            <div class="bg-background border border-border rounded-2xl p-6 sm:p-8 text-center hover:shadow-xl transition">
                 <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center mb-5">
                     <i class="fas fa-location-dot text-2xl text-accent"></i>
                 </div>
@@ -340,11 +366,11 @@
 </section>
 
 <!-- Section 3: Contact Form & Map -->
-<section class="py-16 bg-hover transition-colors duration-300">
+<section class="py-16 bg-background transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
             <!-- Contact Form -->
-            <div class="bg-background border border-border rounded-2xl p-8 shadow-xl">
+            <div class="bg-hover border border-border rounded-2xl p-8 shadow-xl">
                 <div class="mb-6">
                     <h2 class="text-2xl font-bold text-primary-text">Send Us a Message</h2>
                     <p class="text-secondary-text text-sm mt-1">Fill out the form and we'll get back to you within 24 hours.</p>
@@ -385,7 +411,7 @@
             <!-- Map & Hours -->
             <div class="space-y-6">
                 <!-- Map Placeholder -->
-                <div class="bg-background border border-border rounded-2xl overflow-hidden">
+                <div class="bg-hover border border-border rounded-2xl overflow-hidden">
                     <div class="bg-[#FFDCE5] dark:bg-[#401C24] h-64 flex items-center justify-center">
                         <div class="text-center">
                             <i class="fas fa-map-marker-alt text-4xl text-accent mb-2"></i>
@@ -408,7 +434,7 @@
                 </div>
                 
                 <!-- Service Area -->
-                <div class="bg-background border border-border rounded-2xl p-6">
+                <div class="bg-hover border border-border rounded-2xl p-6">
                     <div class="flex items-center gap-2 mb-4">
                         <i class="fas fa-truck text-accent text-xl"></i>
                         <h3 class="text-xl font-bold text-primary-text">Service Area</h3>
@@ -431,7 +457,7 @@
 </section>
 
 <!-- Section 4: FAQs -->
-<section class="py-16 bg-background transition-colors duration-300">
+<section class="py-16 bg-hover transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <span class="text-accent-light font-bold uppercase tracking-wider text-sm">Common Questions</span>
@@ -440,27 +466,27 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div class="bg-hover border border-border rounded-xl p-5">
+            <div class="bg-background border border-border rounded-xl p-5">
                 <h3 class="font-bold text-primary-text flex items-start gap-3"><i class="fas fa-question-circle text-accent mt-1 shrink-0"></i> <span>How far in advance should I place my order?</span></h3>
                 <p class="text-secondary-text text-sm mt-2">We recommend booking 2-4 weeks in advance for custom cake pops and dessert tables. For large weddings and corporate events (100+ guests), please book 6-8 weeks ahead.</p>
             </div>
-            <div class="bg-hover border border-border rounded-xl p-5">
+            <div class="bg-background border border-border rounded-xl p-5">
                 <h3 class="font-bold text-primary-text flex items-start gap-3"><i class="fas fa-question-circle text-accent mt-1 shrink-0"></i> <span>Do you offer tastings?</span></h3>
                 <p class="text-secondary-text text-sm mt-2">Yes! Tastings are available Monday-Thursday by appointment. A small fee applies, which is credited toward your final order.</p>
             </div>
-            <div class="bg-hover border border-border rounded-xl p-5">
+            <div class="bg-background border border-border rounded-xl p-5">
                 <h3 class="font-bold text-primary-text flex items-start gap-3"><i class="fas fa-question-circle text-accent mt-1 shrink-0"></i> <span>What's your delivery radius?</span></h3>
                 <p class="text-secondary-text text-sm mt-2">We deliver within 50 miles of Los Angeles. Delivery is free within 30 miles. Travel fees apply for locations beyond.</p>
             </div>
-            <div class="bg-hover border border-border rounded-xl p-5">
+            <div class="bg-background border border-border rounded-xl p-5">
                 <h3 class="font-bold text-primary-text flex items-start gap-3"><i class="fas fa-question-circle text-accent mt-1 shrink-0"></i> <span>Can you accommodate dietary restrictions?</span></h3>
                 <p class="text-secondary-text text-sm mt-2">Absolutely! We offer gluten-free, dairy-free, nut-free, and vegan options for many of our desserts. Please specify when ordering.</p>
             </div>
-            <div class="bg-hover border border-border rounded-xl p-5">
+            <div class="bg-background border border-border rounded-xl p-5">
                 <h3 class="font-bold text-primary-text flex items-start gap-3"><i class="fas fa-question-circle text-accent mt-1 shrink-0"></i> <span>What is your cancellation policy?</span></h3>
                 <p class="text-secondary-text text-sm mt-2">Full refund available up to 14 days before event. 50% refund between 7-13 days. No refunds within 7 days of event.</p>
             </div>
-            <div class="bg-hover border border-border rounded-xl p-5">
+            <div class="bg-background border border-border rounded-xl p-5">
                 <h3 class="font-bold text-primary-text flex items-start gap-3"><i class="fas fa-question-circle text-accent mt-1 shrink-0"></i> <span>Do you provide setup and cleanup?</span></h3>
                 <p class="text-secondary-text text-sm mt-2">Yes! All catering packages include professional delivery, setup, and styling. Post-event pickup is available for Platinum packages.</p>
             </div>
@@ -469,7 +495,7 @@
 </section>
 
 <!-- Section 5: Social Media Connect -->
-<section class="py-16 bg-hover transition-colors duration-300">
+<section class="py-16 bg-background transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span class="text-accent font-bold uppercase tracking-wider text-sm">Follow Along</span>
         <h2 class="text-3xl font-extrabold mt-2 text-primary-text">Connect With Us</h2>
@@ -478,30 +504,30 @@
         </p>
         
         <div class="flex flex-wrap justify-center gap-6 mb-12">
-            <a href="#" class="bg-background border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
+            <a href="#" class="bg-hover border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
                 <i class="fab fa-instagram text-3xl text-accent"></i>
                 <p class="font-bold text-primary-text mt-2">Instagram</p>
                 <p class="text-xs text-secondary-text">@SweetPops</p>
             </a>
-            <a href="#" class="bg-background border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
-                <i class="fab fa-facebook-f text-3xl text-accent-light"></i>
+            <a href="#" class="bg-hover border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
+                <i class="fab fa-facebook-f text-3xl text-accent"></i>
                 <p class="font-bold text-primary-text mt-2">Facebook</p>
                 <p class="text-xs text-secondary-text">SweetPopsLA</p>
             </a>
-            <a href="#" class="bg-background border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
+            <a href="#" class="bg-hover border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
                 <i class="fab fa-pinterest text-3xl text-accent"></i>
                 <p class="font-bold text-primary-text mt-2">Pinterest</p>
                 <p class="text-xs text-secondary-text">SweetPops</p>
             </a>
-            <a href="#" class="bg-background border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
-                <i class="fab fa-tiktok text-3xl text-accent-light"></i>
+            <a href="#" class="bg-hover border border-border rounded-2xl p-6 w-32 text-center hover:shadow-xl hover:-translate-y-1 transition">
+                <i class="fab fa-tiktok text-3xl text-accent"></i>
                 <p class="font-bold text-primary-text mt-2">TikTok</p>
                 <p class="text-xs text-secondary-text">@SweetPops</p>
             </a>
         </div>
         
         <!-- Newsletter Signup -->
-        <div class="max-w-2xl mx-auto bg-background border border-border rounded-2xl p-8">
+        <div class="max-w-2xl mx-auto bg-hover border border-border rounded-2xl p-8">
             <i class="fas fa-envelope-open-text text-3xl text-accent mb-3"></i>
             <h3 class="text-xl font-bold text-primary-text">Join Our Sweet List</h3>
             <p class="text-secondary-text text-sm mt-2 mb-5">Get exclusive offers, seasonal menus, and dessert inspiration delivered to your inbox.</p>
@@ -515,7 +541,7 @@
 </section>
 
 <!-- Section 6: Final CTA -->
-<section class="py-20 bg-background transition-colors duration-300">
+<section class="py-20 bg-hover transition-colors duration-300">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="max-w-3xl mx-auto">
             <i class="fas fa-cake-candles text-5xl text-accent mb-5"></i>
@@ -544,9 +570,35 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-gray-800">
                 <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
-                    </a>
+                    <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
+                </a>
                     <p class="text-sm leading-relaxed max-w-sm text-gray-300 mt-4">
                         Creating memorable, elegant, and handcrafted cake pops, cupcakes, and french macarons for high-end celebrations. Custom themed setups designed to wow your guests.
                     </p>
@@ -591,8 +643,34 @@
         <div id="drawer-backdrop" class="absolute inset-0 bg-black opacity-0 transition-opacity duration-300 pointer-events-none"></div>
         <div id="drawer-content" class="absolute top-0 start-0 end-0 bg-background rounded-b-2xl shadow-2xl p-6 xl:hidden max-h-[85vh] overflow-y-auto transform translate-y-[-100%] transition-transform duration-300 ease-out">
             <div class="flex justify-between items-center pb-4 border-b border-border">
-                <a href="index.html" class="text-2xl font-serif font-extrabold tracking-wide">
-                    <span style="color: var(--color-accent);">Sweet Pops</span>
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                    <span class="text-2xl font-serif font-black tracking-tight" style="color: var(--color-accent);">Sweet Pops</span>
                 </a>
                 <button id="mobile-menu-close" class="text-primary-text hover:text-accent"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
             </div>

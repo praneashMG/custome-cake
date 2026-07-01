@@ -221,6 +221,8 @@
             font-weight: 500;
             margin-bottom: 0.25rem;
             cursor: pointer;
+            direction: ltr !important;
+            justify-content: flex-start !important;
         }
         .sidebar-link:hover,
         .sidebar-link.active {
@@ -333,6 +335,18 @@
             border-color: var(--color-accent);
             background-color: var(--color-hover);
         }
+
+        @media (min-width: 1280px) {
+            #sidebar {
+                transform: translateX(0) !important;
+            }
+        }
+
+        /* Dynamic logical text alignment for internationalized layouts */
+        p, h1, h2, h3, h4, h5, h6, span, li, td, th, input, select, textarea {
+            unicode-bidi: plaintext;
+            text-align: start;
+        }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -346,7 +360,33 @@
                         <path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
-                <a href="index.html" class="flex items-center space-x-2">
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 flex items-center justify-center rounded-xl bg-accent/10 border border-accent/20 shadow-sm relative overflow-hidden group hover:bg-accent/20 transition-all duration-300">
+                    <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Stick -->
+                        <line x1="50" y1="52" x2="50" y2="88" stroke="#B39D82" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Cake Pop ball -->
+                        <circle cx="50" cy="38" r="26" fill="url(#logoPopGrad)" stroke="var(--color-accent)" stroke-width="2"/>
+                        <!-- Glaze shine -->
+                        <path d="M35 23 A 18 18 0 0 1 65 23" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                        <!-- Pastry gold drizzles -->
+                        <path d="M29 38 Q 40 28 51 38 T 71 38" stroke="var(--color-accent-light)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        <!-- Little gold star/sprinkle -->
+                        <path d="M50 18 L52 22 L56 22 L53 25 L55 29 L50 27 L45 29 L47 25 L44 22 L48 22 Z" fill="var(--color-accent-light)"/>
+                        <circle cx="35" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <circle cx="65" cy="32" r="1.5" fill="var(--color-accent-light)"/>
+                        <!-- Ribbon bow at junction -->
+                        <path d="M42 54 C37 49 48 47 50 54 C52 47 63 49 58 54 Z" fill="var(--color-accent)" stroke="var(--color-accent)" stroke-width="1"/>
+                        <path d="M48 54 L44 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M52 54 L56 61" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoPopGrad" x1="24" y1="12" x2="76" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FF8EAB"/>
+                                <stop offset="100%" stop-color="var(--color-accent)"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
                     <span class="text-xl sm:text-2xl font-serif font-black tracking-tight whitespace-nowrap" style="color: var(--color-accent);">Sweet Pops</span>
                 </a>
             </div>
@@ -366,7 +406,7 @@
                 </button>
                 <div class="flex items-center gap-2 ps-2 sm:ps-3 border-s border-border">
                     <div class="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">SJ</div>
-                    <div class="hidden sm:block">
+                    <div class="hidden sm:block text-start">
                         <p class="text-sm font-medium" id="header-user-name">Sarah Jenkins</p>
                         <p class="text-xs text-secondary-text">Gold Pastry Member</p>
                     </div>
@@ -1082,11 +1122,19 @@
             const setDirection = (dir) => {
                 html.setAttribute('dir', dir);
                 localStorage.setItem('language', dir === 'rtl' ? 'ar' : 'en');
+                
+                // Align closed sidebar translation to new direction
+                const isSidebarOpen = sidebar && sidebar.classList.contains('translate-x-0');
+                if (sidebar && !isSidebarOpen) {
+                    if (dir === 'rtl') {
+                        sidebar.classList.add('translate-x-full');
+                        sidebar.classList.remove('-translate-x-full');
+                    } else {
+                        sidebar.classList.add('-translate-x-full');
+                        sidebar.classList.remove('translate-x-full');
+                    }
+                }
             };
-            setDirection(localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
-            document.getElementById('lang-toggle')?.addEventListener('click', () => {
-                setDirection(html.getAttribute('dir') === 'ltr' ? 'rtl' : 'ltr');
-            });
 
             // Mobile menu toggling
             const sidebar = document.getElementById('sidebar');
@@ -1096,16 +1144,25 @@
 
             const toggleMobile = (open) => {
                 const isRtl = html.getAttribute('dir') === 'rtl';
-                if (isRtl) {
-                    sidebar.classList.toggle('translate-x-full', !open);
-                    sidebar.classList.remove('-translate-x-full');
+                if (open) {
+                    sidebar.classList.add('translate-x-0');
+                    sidebar.classList.remove('-translate-x-full', 'translate-x-full', 'rtl:translate-x-full');
                 } else {
-                    sidebar.classList.toggle('-translate-x-full', !open);
-                    sidebar.classList.remove('translate-x-full');
+                    sidebar.classList.remove('translate-x-0');
+                    if (isRtl) {
+                        sidebar.classList.add('translate-x-full');
+                    } else {
+                        sidebar.classList.add('-translate-x-full');
+                    }
                 }
                 overlay.classList.toggle('active', open);
                 document.body.style.overflow = open ? 'hidden' : '';
             };
+
+            setDirection(localStorage.getItem('language') === 'ar' ? 'rtl' : 'ltr');
+            document.getElementById('lang-toggle')?.addEventListener('click', () => {
+                setDirection(html.getAttribute('dir') === 'ltr' ? 'rtl' : 'ltr');
+            });
 
             menuToggle?.addEventListener('click', () => toggleMobile(true));
             closeSidebar?.addEventListener('click', () => toggleMobile(false));

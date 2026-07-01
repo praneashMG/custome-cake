@@ -398,66 +398,127 @@
     </div>
 </section>
 
-<!-- Section 3: Dessert Bar Packages -->
+<!-- Section 3: Interactive Dessert Bar Planner -->
 <section class="py-20 bg-hover transition-colors duration-300">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div class="text-center max-w-2xl mx-auto mb-14">
-            <span class="text-accent-light font-bold uppercase tracking-wider text-sm">Packages</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-primary-text">Complete Dessert Bar Packages</h2>
-            <p class="text-secondary-text mt-4">All packages include delivery, elegant display setup, and styling.</p>
+            <span class="text-accent font-bold uppercase tracking-wider text-sm">Interactive Tool</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 text-primary-text font-serif">Event Dessert Planner</h2>
+            <p class="text-secondary-text mt-4">Estimate quantities and design a custom dessert bar configuration in real-time.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Petite Package -->
-            <div class="bg-background border border-border rounded-2xl p-8 hover:shadow-xl transition flex flex-col">
-                <h3 class="text-xl font-bold text-secondary-text text-center">Petite Dessert Bar</h3>
-                <div class="mt-4 text-center"><span class="text-4xl font-black text-primary-text">$380</span><span class="text-secondary-text">/package</span></div>
-                <p class="text-sm text-secondary-text text-center mt-2">Serves 15-20 guests</p>
-                <hr class="my-6 border-border">
-                <ul class="space-y-3 text-sm text-secondary-text mb-8">
-                    <li><i class="fas fa-check text-accent me-2"></i> 24 Custom Cake Pops</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 12 French Macarons</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 12 Gourmet Cupcakes</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Standard risers and stands</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Menu display cards</li>
-                </ul>
-                <a href="#booking" class="mt-auto block text-center py-3 border border-accent text-accent font-bold rounded-xl hover:bg-accent hover:text-white transition">Reserve Petite Bar</a>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <!-- Left Side: Inputs -->
+            <div class="lg:col-span-7 bg-background border border-border rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-md">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-primary-text font-bold mb-3 flex justify-between items-center">
+                            <span>Expected Guest Count</span>
+                            <span class="text-accent text-lg font-black font-serif" id="guest-display">50 guests</span>
+                        </label>
+                        <input type="range" id="guest-slider" min="20" max="250" value="50" step="5" class="w-full h-2 bg-border rounded-lg appearance-none cursor-pointer accent-accent">
+                        <div class="flex justify-between text-xs text-secondary-text mt-2 font-medium">
+                            <span>20 guests</span>
+                            <span>130 guests</span>
+                            <span>250 guests</span>
+                        </div>
+                    </div>
+
+                    <hr class="border-border">
+
+                    <div>
+                        <span class="block text-primary-text font-bold mb-3">Choose Dessert Varieties</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="flex items-center gap-3 p-3 bg-hover rounded-xl border border-border cursor-pointer hover:border-accent transition">
+                                <input type="checkbox" id="check-pops" checked class="w-4 h-4 rounded text-accent focus:ring-accent border-border cursor-pointer accent-accent">
+                                <div>
+                                    <h4 class="font-bold text-primary-text text-sm">Cake Pops</h4>
+                                    <p class="text-xs text-secondary-text">$3.50 ea | Pop shape customizable</p>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 bg-hover rounded-xl border border-border cursor-pointer hover:border-accent transition">
+                                <input type="checkbox" id="check-macs" checked class="w-4 h-4 rounded text-accent focus:ring-accent border-border cursor-pointer accent-accent">
+                                <div>
+                                    <h4 class="font-bold text-primary-text text-sm">French Macarons</h4>
+                                    <p class="text-xs text-secondary-text">$2.50 ea | Silk buttercream fillings</p>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 bg-hover rounded-xl border border-border cursor-pointer hover:border-accent transition">
+                                <input type="checkbox" id="check-cups" class="w-4 h-4 rounded text-accent focus:ring-accent border-border cursor-pointer accent-accent">
+                                <div>
+                                    <h4 class="font-bold text-primary-text text-sm">Gourmet Cupcakes</h4>
+                                    <p class="text-xs text-secondary-text">$4.00 ea | Custom color icing</p>
+                                </div>
+                            </label>
+                            <label class="flex items-center gap-3 p-3 bg-hover rounded-xl border border-border cursor-pointer hover:border-accent transition">
+                                <input type="checkbox" id="check-tarts" class="w-4 h-4 rounded text-accent focus:ring-accent border-border cursor-pointer accent-accent">
+                                <div>
+                                    <h4 class="font-bold text-primary-text text-sm">Mini Dessert Tarts</h4>
+                                    <p class="text-xs text-secondary-text">$3.50 ea | Fresh seasonal berries</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-xs text-secondary-text mt-6 bg-hover p-3 rounded-xl border border-border">
+                    💡 **Planning Rule of Thumb**: We recommend offering **2.5 to 3.0 dessert pieces** per guest to ensure a gorgeous, fully-stocked presentation tower throughout the celebration.
+                </div>
             </div>
 
-            <!-- Grand Package - Popular -->
-            <div class="bg-background border-2 border-accent rounded-2xl p-8 shadow-lg relative flex flex-col">
-                <span class="absolute -top-3 start-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-xs font-bold z-10">Best Value</span>
-                <h3 class="text-xl font-bold text-accent text-center">Grand Dessert Buffet</h3>
-                <div class="mt-4 text-center"><span class="text-4xl font-black text-primary-text">$780</span><span class="text-secondary-text">/package</span></div>
-                <p class="text-sm text-secondary-text text-center mt-2">Serves 40-50 guests</p>
-                <hr class="my-6 border-border">
-                <ul class="space-y-3 text-sm text-secondary-text mb-8">
-                    <li><i class="fas fa-check text-accent me-2"></i> 48 Custom Cake Pops</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 36 French Macarons</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 24 Gourmet Cupcakes</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 24 Chocolate-Dipped Strawberries</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Full table styling and backdrop</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Custom flavor selection</li>
-                </ul>
-                <a href="#booking" class="mt-auto block text-center py-3 book-btn text-white font-bold rounded-xl shadow-md">Reserve Grand Buffet</a>
-            </div>
+            <!-- Right Side: Outputs -->
+            <div class="lg:col-span-5 bg-background border-2 border-accent rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg relative overflow-hidden">
+                <span class="absolute top-0 end-0 bg-accent text-white px-4 py-1 rounded-bl-xl text-xs font-bold shadow-sm">Live Quote</span>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-primary-text font-serif mb-4 border-b border-border pb-3">Display Summary</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary-text font-medium">Layout Target:</span>
+                            <span class="text-primary-text font-bold" id="summary-guests">50 Guests</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-secondary-text font-medium">Recommended Total Items:</span>
+                            <span class="text-accent font-bold" id="summary-total-items">125 pcs</span>
+                        </div>
+                        
+                        <hr class="border-border">
+                        
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm" id="row-pops">
+                                <span class="text-secondary-text">Custom Cake Pops:</span>
+                                <span class="text-primary-text font-semibold" id="qty-pops">75 pcs</span>
+                            </div>
+                            <div class="flex justify-between text-sm" id="row-macs">
+                                <span class="text-secondary-text">French Macarons:</span>
+                                <span class="text-primary-text font-semibold" id="qty-macs">50 pcs</span>
+                            </div>
+                            <div class="flex justify-between text-sm hidden" id="row-cups">
+                                <span class="text-secondary-text">Gourmet Cupcakes:</span>
+                                <span class="text-primary-text font-semibold" id="qty-cups">0 pcs</span>
+                            </div>
+                            <div class="flex justify-between text-sm hidden" id="row-tarts">
+                                <span class="text-secondary-text">Mini Dessert Tarts:</span>
+                                <span class="text-primary-text font-semibold" id="qty-tarts">0 pcs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Premium Package -->
-            <div class="bg-background border border-border rounded-2xl p-8 hover:shadow-xl transition flex flex-col">
-                <h3 class="text-xl font-bold text-secondary-text text-center">Luxury Wedding Collection</h3>
-                <div class="mt-4 text-center"><span class="text-4xl font-black text-primary-text">$1,500+</span><span class="text-secondary-text">/package</span></div>
-                <p class="text-sm text-secondary-text text-center mt-2">Serves 100+ guests</p>
-                <hr class="my-6 border-border">
-                <ul class="space-y-3 text-sm text-secondary-text mb-8">
-                    <li><i class="fas fa-check text-accent me-2"></i> 100+ Custom Cake Pops</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 72 Premium Macarons</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> 48 Luxury Cupcakes</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Mini tarts and petits fours</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Multi-tier dessert stands</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Floral and themed decor</li>
-                    <li><i class="fas fa-check text-accent me-2"></i> Post-event pickup</li>
-                </ul>
-                <a href="#booking" class="mt-auto block text-center py-3 border border-accent text-accent font-bold rounded-xl hover:bg-accent hover:text-white transition">Inquire Luxury Wedding</a>
+                <div class="mt-8 pt-4 border-t border-border">
+                    <div class="flex justify-between items-baseline mb-4">
+                        <span class="text-secondary-text font-bold">Estimated Cost:</span>
+                        <div class="text-end">
+                            <span class="text-3xl font-black text-primary-text font-serif" id="summary-price">$380</span>
+                            <span class="text-secondary-text text-xs block">subject to final tax/delivery</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#booking" id="planner-book-btn" class="block w-full text-center py-3 book-btn text-white font-bold rounded-xl shadow-md transition duration-300">
+                        Book This Configuration
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -930,6 +991,99 @@
                     m.style.transform = '';
                 });
             });
+
+            // Interactive Dessert Bar Planner Logic
+            const guestSlider = document.getElementById('guest-slider');
+            const guestDisplay = document.getElementById('guest-display');
+            const summaryGuests = document.getElementById('summary-guests');
+            const summaryTotalItems = document.getElementById('summary-total-items');
+            const summaryPrice = document.getElementById('summary-price');
+
+            const checkPops = document.getElementById('check-pops');
+            const checkMacs = document.getElementById('check-macs');
+            const checkCups = document.getElementById('check-cups');
+            const checkTarts = document.getElementById('check-tarts');
+
+            const rowPops = document.getElementById('row-pops');
+            const rowMacs = document.getElementById('row-macs');
+            const rowCups = document.getElementById('row-cups');
+            const rowTarts = document.getElementById('row-tarts');
+
+            const qtyPops = document.getElementById('qty-pops');
+            const qtyMacs = document.getElementById('qty-macs');
+            const qtyCups = document.getElementById('qty-cups');
+            const qtyTarts = document.getElementById('qty-tarts');
+            
+            const calculateDesserts = () => {
+                if (!guestSlider) return;
+                const guests = parseInt(guestSlider.value);
+                guestDisplay.innerText = `${guests} guests`;
+                summaryGuests.innerText = `${guests} Guests`;
+                
+                // Active options count
+                const options = [checkPops.checked, checkMacs.checked, checkCups.checked, checkTarts.checked];
+                const activeCount = options.filter(Boolean).length;
+                
+                // Recommended total items = guests * 2.5
+                const totalItems = Math.round(guests * 2.5);
+                summaryTotalItems.innerText = `${totalItems} pcs`;
+                
+                if (activeCount === 0) {
+                    summaryPrice.innerText = '$0';
+                    summaryTotalItems.innerText = '0 pcs';
+                    [rowPops, rowMacs, rowCups, rowTarts].forEach(r => r.classList.add('hidden'));
+                    return;
+                }
+                
+                // Equal share of total items among active types
+                const baseShare = Math.floor(totalItems / activeCount);
+                
+                let popsVal = checkPops.checked ? baseShare : 0;
+                let macsVal = checkMacs.checked ? baseShare : 0;
+                let cupsVal = checkCups.checked ? baseShare : 0;
+                let tartsVal = checkTarts.checked ? baseShare : 0;
+                
+                // Update displays and row visibilities
+                if (checkPops.checked) {
+                    rowPops.classList.remove('hidden');
+                    qtyPops.innerText = `${popsVal} pcs`;
+                } else {
+                    rowPops.classList.add('hidden');
+                }
+                
+                if (checkMacs.checked) {
+                    rowMacs.classList.remove('hidden');
+                    qtyMacs.innerText = `${macsVal} pcs`;
+                } else {
+                    rowMacs.classList.add('hidden');
+                }
+                
+                if (checkCups.checked) {
+                    rowCups.classList.remove('hidden');
+                    qtyCups.innerText = `${cupsVal} pcs`;
+                } else {
+                    rowCups.classList.add('hidden');
+                }
+                
+                if (checkTarts.checked) {
+                    rowTarts.classList.remove('hidden');
+                    qtyTarts.innerText = `${tartsVal} pcs`;
+                } else {
+                    rowTarts.classList.add('hidden');
+                }
+                
+                // Pricing calculation:
+                // Pops: $3.50, Macs: $2.50, Cups: $4.00, Tarts: $3.50
+                const price = (popsVal * 3.50) + (macsVal * 2.50) + (cupsVal * 4.00) + (tartsVal * 3.50);
+                summaryPrice.innerText = `$${Math.round(price)}`;
+            };
+            
+            [guestSlider, checkPops, checkMacs, checkCups, checkTarts].forEach(elem => {
+                elem?.addEventListener('input', calculateDesserts);
+                elem?.addEventListener('change', calculateDesserts);
+            });
+            
+            calculateDesserts();
 });
     </script>
 </body>
